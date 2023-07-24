@@ -1,0 +1,89 @@
+
+Today's Agenda:
+--------------
+9.30AM  to 10.15AM -Handling dropdown
+10.15AM to 10.30AM -Classroom
+10.30Am to 10.40AM -Break
+10.40AM to 12.00AM -Basic Xpath
+12.00AM to 12.15PM -classroom
+12.15PM to 12.30PM -Webdriver methods
+
+Dropdown
+-------
+Element with <select> in dom
+
+Two steps
+locate the dropdownelement
+click on the ele
+pick the option
+
+
+selenium class Select 
+Create obj for the select class
+Select obj=new Select(webelement)
+select Option from it
+selectbyVisibleText
+selectByValue
+selectbyIndex
+
+Xpath:
+-----
+Xml path
+
+-->all the tags to reach the element
+
+Absolute path-->long path
+Starts with /	along with the root element
+/html/body/div[2]/div[2]/div/form/p/input
+
+
+Relative Path-->shortest path
+starts with // -->exact node of the targeted webelement
+syntax:
+//tagname
+
+Basic Xpath (5 types)
+
+1.Attribute based r.xpath
+-------------------------
+//tagname[@attribute='attributeValue']
+//input[@id='username']
+//label[@for='username']
+
+2.Text based r.xpath
+--------------------
+//tagname[text()='textValue']
+//a[text()='Leads']
+
+3.Partial Attribute based relative xpath
+---------------------------------------
+//tagname[contains(@attribute,'attributeValue')]
+//input[contains(@class,'decorat')]
+//input[contains(@name,'search-suggestions')]
+
+4.Partial text based r.xpath
+----------------------------
+//tagname[contains(text(),'textValue')]
+//a[contains(text(),'SFA')]
+//span[contains(text(),'FOOD')]
+
+
+Collection based r.xpath
+-----------------------------
+(//input[@class='inputLogin'])[1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Selenium July2023 - Week1 feedback form
+https://forms.office.com/r/778xBWYKeA
