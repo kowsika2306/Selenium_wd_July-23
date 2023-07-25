@@ -1,0 +1,89 @@
+Advanced Xpath :
+---------------
+Relationship based Xpath (Axes Xpath)
+ relate one element with other element
+ 
+Syntax:
+------
+Parent to child:
+---------------
+(relative basic xpath of parent)/tagname of the child[optional -xpath of child]
+//p[@class='top']/input[@id='username']
+//p/input[@id='password']
+
+Child to Parent:
+---------------
+(relative xpath of child)/parent::tagname
+//input[@id='password']/parent::p
+//input[@type='submit']/parent::p
+
+GrandParent to GrandChild:
+--------------------------
+(relative xpath of grandParent)//tagname of grandChild
+//form[@id='login']//input[@id='username']
+//form[@id='login']//input[@type='submit']
+
+GrandChild to GrandParent:
+--------------------------
+(relative xpath of GrandChild)/ancestor::tagname
+//input[@type='submit']/ancestor::form
+
+Sibling:(2 ways)
+-------
+Elder sibling to Younger
+-----------------------
+(relative xpath of elder sibling)/following-sibling::tagname of younger sibling
+//label[@for='username']/following-sibling::input
+
+Yonger sibling to Elder
+----------------------
+(relative xpath of yonger sibling)/preceding-sibling::tagname of Elder
+//input[@id='password']/preceding-sibling::label
+
+Cousin:(2 ways)
+--------------
+Elder cousin to younger
+----------------------
+(relative xpath of elder cousin)/following::tagname
+//input[@id='username']/following::input[@id='password']
+//label[@for='username']/following::input
+
+Younger Cousin to elder
+------------------------
+(relative xpath of younger Cousin)/preceding::tagname
+//input[@type='submit']/preceding::input
+//input[@class='decorativeSubmit']/preceding::div -->takes to topmost available match
+
+
+Advanced Xpath:
+===============
+1.Find the XPath of 1st resulting lead id result of find leads (Parent -child)
+
+Solution:
+(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[1]/a
+
+2.Myntra -> mens jeans : Xpath to click on flying machine checkbox
+
+Solution:
+brands=RoadSter
+//input[@value='"+brand+"']/following::div
+
+3.Salesforce ->+ icon-->New Task-->subject to textbox
+Solution:  
+  //label[text()='Subject']/following::input
+   
+4.CreateLead--> textbox in relation with  firstname
+Solution: 
+  //span[contains(text(),'First Name')]/following::input
+
+5.https://www.redbus.in/ -->From to textbox
+	Solution : //label[text()='From']/preceding-sibling::input
+
+To get DOM-->Right click and inspect /click on 3 dots near the address bar-->more tools-->developer tools/
+ctrl shift i
+
+
+
+
+
+
