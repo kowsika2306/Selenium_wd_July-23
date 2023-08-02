@@ -25,7 +25,7 @@ public class LearnWebDriverWait {
 		System.out.println(handles.size());
 		
 		  WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(15));
-		  wait.until(ExpectedConditions.);
+		  wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		 
 	}
 
