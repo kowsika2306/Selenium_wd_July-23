@@ -1,0 +1,79 @@
+POM 
+
+ -->base for building a framework
+ created packages
+ Basepackage-->have the common functionalities of the testcases
+	Java class->projectSpecificMethod
+	Annotations for pre and post conditions with @Before and @After Method 
+ PagesPackage-->have the page objects to represent the navigation in the app and also UI
+             -->java class for each page navigation and webelement and its actions
+			 -->return statement -->method and page chaining
+ Testcaases -->for execution
+			-->java class with @Test method and called methods of pages for execution
+ UtilPackage -->have excel code
+			-->java class wihich connects excel file
+			
+Seq and Parallel Execution 
+--------------------------
+To do Seq -->made the driver as static -->driver instance is passed across the classes
+To do Parallel--> static driver is supported
+				->created a public constructor in all pages and used this keyword to set the driver instance to that respective pages
+
+Integration POM with Cucumber
+-------------------------
+feature 
+  Created the feature file 
+stepdef
+  Pages act as step def so the feature steps are mapped with pages
+Runner 
+ cucumber option and AbstractTestNgCucumberTests used for execution
+ 
+Cucumber does not support constructor/cannot use static for POM exe in parallel
+--------------------------------------------------------------------------------
+To resolve this 
+  Threalocal Configuration
+  Encapsulation -->binding data together
+                -->provides data security
+ declared driver as private static final threadLocal variable
+ To access the private variable in other class 
+ used getter and setter method
+ getter to give access to other classes
+ setter to se the value during runtime
+---------------------------------------------------------------------------
+Pom with Multilingual application
+---------------------------------
+Properties file
+multiple languages-->common locator but different values
+
+Steps to read the propertiesfile
+--------------------------------
+1.under src/main/resources 
+  Create a file as english.properties
+  declared the key and value
+
+2.In Eclipse -->Java class 
+  configured the FileInputStream ->set the path of the file
+  Created the instance for Properties file and used load() to connet the file with properties class
+3. using Properties class ob .getproperty("key")
+
+Integrate the Properties file with POM
+--------------------------------------
+In ProjectSpecificMethod class- >under preCondition()
+configured the FileInputStream ->set the path of the file
+  Created the instance for Properties file and used load() to connet the file with properties class
+  Declared the Properties variable as public
+  made static for seq exe
+  added to constructorin all pages-->parallel exe
+  
+Read the key value in the respective pages using ob .getproperty("key")
+
+TO read dynamic 
+Use Static Parametrization -->to get the input for  the language from xml file
+
+
+
+
+
+
+
+ 
