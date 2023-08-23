@@ -1,0 +1,85 @@
+Exceptionhandling
+Extent report with POM
+
+
+Exception ---> abnormality that disrupts the normal flow of the prog  -->handled
+Error -->infinite loop, stack overflowerror -->cannt be handled
+
+
+unchecked Exception /Runtimeexception
+--------------------------------------
+try -->actual code/logic 
+catch--> handle the exception
+ supports to execute the other line of code in the script after the line of exception
+ 
+ try -catch
+ try with multiple catch block
+ nested try catch block
+ try -finally
+ 
+ Checked exception/Compile time exception
+ -----------------------------------------
+ throws 
+ throw
+ 
+----------------------------------
+
+Reports
+ TestNg reports
+ Cucumber Report
+  
+ Limitation 
+  -->doesn't hold the history
+  -->self-destructive
+  -->cannot attach the screenshot
+  
+ To have an attractive report -chart represtation to show the status pass and fail %
+ To have the history in the report
+ To have the screenshot in the report
+ 
+ Extent Report ->3rd party library
+ Add dependency
+ 
+ 
+ Integrating Extent Report with POM
+ -------------------------------------
+ 
+ Step:1 
+  Create a method startReport() in ProjectSpecificMethod 
+  Add the first 3 steps of ExtentReport code
+  annotate the mehtod with @BeforeSuite
+  Declare the ExtentReport extent varible globally
+  
+ Step:2 
+ Create a method endReport() in PSM
+ Add the flush() and annotate the method @AfterSuite
+ 
+ Step:3 
+ Create a method as testDetails
+ Add the test details code (testcasename, testdesc, author and what category)
+ declared all the variables globally
+ declared the ExtentTest test variable globally
+ 
+ step:4
+ Create a method reportStep with argumets as status and message
+ added the neceaary code of extent report using if condition
+ test.pass ()
+ teat.fail()
+ 
+ Step:5 
+ Called the reportStep() in all the methods in each page class 
+ try block -->called with pass status
+ catch block-->called with fail status
+ 
+ Step:6
+ create a method as takeSnap()
+ add the screenshot code
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
